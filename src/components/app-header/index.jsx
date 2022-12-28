@@ -3,7 +3,6 @@ import HeaderCenter from './cpns/cpn-center'
 import HeaderLeft from './cpns/cpn-left'
 import HeaderRight from './cpns/cpn-right'
 import { HeaderWrapper } from './style'
-
 const AppHeader = memo(() => {
   return (
     <HeaderWrapper>

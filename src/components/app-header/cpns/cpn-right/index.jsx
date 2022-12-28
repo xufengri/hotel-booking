@@ -1,10 +1,23 @@
+import IconGlobal from '@/assets/svg/icon_global'
+import IconAvatar from '@/assets/svg/icon_avatar'
+import IconMenu from '@/assets/svg/icon_menu'
 import React, { memo } from 'react'
 import { RightWrapper } from './style'
 
 const HeaderRight = memo(() => {
   return (
     <RightWrapper>
-        right
+      <div className='btns'>
+        <span className='btn'>登录</span>
+        <span className='btn'>注册</span>
+        <span className='btn'>
+          <IconGlobal></IconGlobal>
+        </span>
+      </div>
+      <div className='profile'>
+        <IconMenu></IconMenu>
+        <IconAvatar></IconAvatar>
+      </div>
     </RightWrapper>
   )
 })
