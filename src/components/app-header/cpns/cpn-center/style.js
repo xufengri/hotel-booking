@@ -3,6 +3,8 @@ import styled from "styled-components";
 
 
 export const CenterWrapper = styled.div`
+    display: flex;
+    align-items: center;
     .search-bar {
         display: flex;
         justify-content: space-between;
@@ -14,8 +16,8 @@ export const CenterWrapper = styled.div`
         border: 1px solid #ddd;
         border-radius: 24px;
         cursor: pointer;
+        ${props => props.theme.mixin.boxShadow};
     }
-    ${props => props.theme.mixin.boxShadow};
     .text {
         padding: 0 8px;
         color: #222;
