@@ -15,7 +15,7 @@ export const CenterWrapper = styled.div`
         padding: 0 8px;
         border: 1px solid #ddd;
         border-radius: 24px;
-        cursor: pointer;
+        /* cursor: pointer; */
         ${props => props.theme.mixin.boxShadow};
     }
     .text {

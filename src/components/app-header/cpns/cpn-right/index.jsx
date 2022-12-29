@@ -17,6 +17,18 @@ const HeaderRight = memo(() => {
       <div className='profile'>
         <IconMenu></IconMenu>
         <IconAvatar></IconAvatar>
+
+        <div className='panel'>
+          <div className='top'>
+            <div className='item register'>注册</div>
+            <div className='item login'>登录</div>
+          </div>
+          <div className='bottom'>
+            <div className='item'>出租房源</div>
+            <div className='item'>开展体验</div>
+            <div className='item'>帮助</div>
+          </div>
+        </div>
       </div>
     </RightWrapper>
   )

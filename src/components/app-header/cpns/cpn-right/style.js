@@ -24,6 +24,7 @@ export const RightWrapper = styled.div`
         }
     }
     .profile {
+        position: relative;
         display: flex;
         width: 77px;
         height: 42px;
@@ -37,6 +38,28 @@ export const RightWrapper = styled.div`
         align-items: center;
         /* 动画做了混入 */
         ${props=> props.theme.mixin.boxShadow}
-        
+        .panel {
+            position: absolute;
+            padding: 10px 0;
+            width: 240px;
+            height: 200px;
+            top: 64px;
+            right: 0;
+            color: #000;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 4px rgba(0, 0, 0, .2);
+            .register {
+                font-weight: 600;
+            }
+            .top {
+                border-bottom: 1px solid #999;
+            }
+            .item {
+                height: 40px;
+                line-height: 40px;
+                padding: 0 16px;
+            }
+        }
     }
 `
