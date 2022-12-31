@@ -1,28 +1,35 @@
-import React, { memo, useEffect, useState } from 'react'
-import zyRequest from '@/services'
-const Home = memo(() => {
-  
-  //网络请求的代码
-  const [ highScore, sethighScore ] = useState({})
-  //网络请求
-  useEffect(()=> {
-    zyRequest.get({ url: '/home/highscore' }).then(res => {
-      sethighScore(res)
-      console.log(res)
-    })
-  }, [])
+import SectionRoom from '@/components/section-rooms'
+import SelectionHeader from '@/components/selection-header'
+import { fetchHomeDataAction } from '@/store/modules/home'
+import React, { memo, useEffect } from 'react'
+import { shallowEqual, useDispatch, useSelector } from 'react-redux'
+import HomeBanner from './c-cpns/home-banner'
+import { HomeWrapper } from './styles'
+
+const home = memo(() => {
+  //从redux中获取数据
+  const { goodPriceInfo } = useSelector((state) => ({
+    goodPriceInfo: state.home.goodPriceInfo
+  }), shallowEqual)
+
+  // 派发异步的事件: 发送网络请求
+  const dispatch = useDispatch()
+  useEffect(() => {
+    dispatch(fetchHomeDataAction('xxx'))
+  }, [dispatch])
   
   return (
-    <div>
-      <h2>{ highScore.title }</h2>
-      <ul>
-        {
-          highScore?.list?.map(item => {
-            return <li key={item.id}>{item.name}</li>
-          })
-        }
-      </ul>
-    </div>
+    <HomeWrapper>
+      <HomeBanner>
+      </HomeBanner>
+      <div className='content'>
+        <div className='good-price'>
+          <SelectionHeader title={goodPriceInfo.title}></SelectionHeader>
+          <SectionRoom roomList={goodPriceInfo.list}></SectionRoom> 
+        </div>
+      </div>
+    </HomeWrapper>
   )
 })
-export default Home
+
+export default home

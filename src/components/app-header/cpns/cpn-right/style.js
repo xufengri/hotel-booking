@@ -43,7 +43,7 @@ export const RightWrapper = styled.div`
             padding: 10px 0;
             width: 240px;
             height: 200px;
-            top: 64px;
+            top: 54px;
             right: 0;
             color: #000;
             background-color: #fff;
@@ -59,6 +59,9 @@ export const RightWrapper = styled.div`
                 height: 40px;
                 line-height: 40px;
                 padding: 0 16px;
+                &:hover {
+                    background-color: #f5f5f5;
+                }
             }
         }
     }
