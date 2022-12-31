@@ -28,7 +28,7 @@ const home = memo(() => {
       <div className='content'>
         <div className='discount'>
           <SelectionHeader title={ discountInfo.title } subtitle={ discountInfo.subtitle }></SelectionHeader>
-          <SectionRoom roomList={ discountInfo.dest_list?.["佛山"] }></SectionRoom>
+          <SectionRoom roomList={ discountInfo.dest_list?.["佛山"] } itemWidth="33.33%"></SectionRoom>
         </div>
         <HomeSectionV1 infoData={ goodPriceInfo } />
         <HomeSectionV1 infoData={ highScoreInfo } />

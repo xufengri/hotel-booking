@@ -3,13 +3,13 @@ import PropTypes from 'prop-types'
 import { SectionRoomWrapper } from './style'
 import RoomItem from '../room-item'
 const index = memo(function index(props) {
-    const { roomList = [] } = props
+    const { roomList = [], itemWidth } = props
     return (
     <SectionRoomWrapper>
         <ul className='room-list'>
             {
                 roomList?.map(item => {
-                return <RoomItem key={item.id} itemData={item}></RoomItem>
+                return <RoomItem key={item.id} itemData={item} itemWidth={itemWidth}></RoomItem>
                 })
             }
         </ul>
@@ -18,7 +18,8 @@ const index = memo(function index(props) {
 })
 
 index.propTypes = {
-    roomList:PropTypes.array
+    roomList:PropTypes.array,
+    itemWidth: PropTypes.string
 }
 
 export default index
