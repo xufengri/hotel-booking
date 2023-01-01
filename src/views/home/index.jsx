@@ -1,10 +1,10 @@
-import SectionRoom from '@/components/section-rooms'
-import SelectionHeader from '@/components/selection-header'
 import { fetchHomeDataAction } from '@/store/modules/home'
 import React, { memo, useEffect } from 'react'
 import { shallowEqual, useDispatch, useSelector } from 'react-redux'
+
 import HomeBanner from './c-cpns/home-banner'
 import HomeSectionV1 from './c-cpns/home-section-v1'
+import HomeSectionV2 from './c-cpns/home-section-v2'
 import { HomeWrapper } from './styles'
 
 const home = memo(() => {
@@ -26,10 +26,7 @@ const home = memo(() => {
       <HomeBanner>
       </HomeBanner>
       <div className='content'>
-        <div className='discount'>
-          <SelectionHeader title={ discountInfo.title } subtitle={ discountInfo.subtitle }></SelectionHeader>
-          <SectionRoom roomList={ discountInfo.dest_list?.["佛山"] } itemWidth="33.33%"></SectionRoom>
-        </div>
+        { Object.keys(discountInfo).length && <HomeSectionV2 infoData={discountInfo} />}
         <HomeSectionV1 infoData={ goodPriceInfo } />
         <HomeSectionV1 infoData={ highScoreInfo } />
       </div>
